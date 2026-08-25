@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
 			<h1 class="title is-1 has-text-white">
 				Let's make something great
 			</h1>
-			<p class="subtitle is-4 mt-4" style="max-width: 560px; margin-left: auto; margin-right: auto;">
+			<p class="subtitle is-4 mt-4 u-constrained-sm">
 				New project, partnership, or just want to say hello?
 				We read every message.
 			</p>
@@ -35,8 +35,8 @@ import Layout from "../layouts/Layout.astro";
 					<label class="label" for="budget">Budget range</label>
 					<div class="control">
 						<div class="select is-medium is-fullwidth">
-							<select id="budget">
-								<option value="">Select a range</option>
+							<select id="budget" required>
+								<option value="" disabled selected>Select a range</option>
 								<option value="10k-25k">&dollar;10k – &dollar;25k</option>
 								<option value="25k-50k">&dollar;25k – &dollar;50k</option>
 								<option value="50k-100k">&dollar;50k – &dollar;100k</option>
