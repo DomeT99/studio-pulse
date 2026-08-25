@@ -1,43 +1,106 @@
-# Astro Starter Kit: Minimal
+# Studio Pulse
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+Marketing site for a full-service communication agency — brand strategy, creative direction, digital, content, and more.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Built with [Astro](https://astro.build) and [Bulma](https://bulma.io), statically generated and dependency-light.
 
-## 🚀 Project Structure
+## Features
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Multi-page site** — Home, About, Blog, Contact.
+- **Dark / light mode** — toggle in the navbar; preference persisted in `localStorage` and honors the OS `prefers-color-scheme` on first visit.
+- **SPA page transitions** — `<ClientRouter />` provides client-side navigation with a soft fade.
+- **Blog with content collections** — posts written in Markdown with typed frontmatter (`src/content/blog/`).
+- **Accessibility** — skip link, semantic landmarks and headings, `aria-current` on the active nav item, visible `:focus-visible` outlines, `prefers-reduced-motion` support, form labels + required/autocomplete attributes.
+
+## Tech Stack
+
+| Layer | Choice |
+|-------|--------|
+| Framework | Astro 7 (static/SSG) |
+| CSS | Bulma 1.0.4 + custom global stylesheet |
+| Content | Astro Content Collections (`astro/loaders` `glob`) |
+| Package manager | pnpm |
+
+## Project Structure
 
 ```text
 /
-├── public/
+├── public/                 # favicon + static assets
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/
+│   │   └── Card.astro      # shared card component
+│   ├── content/
+│   │   └── blog/           # Markdown blog posts (content collection)
+│   ├── content.config.ts   # content collection schema + loader
+│   ├── layouts/
+│   │   └── Layout.astro    # global layout: head, navbar, footer, theme toggle
+│   ├── pages/
+│   │   ├── index.astro     # Home
+│   │   ├── about.astro     # About
+│   │   ├── blog/
+│   │   │   ├── index.astro # Blog listing
+│   │   │   └── [...slug].astro  # Individual blog post
+│   │   └── contact.astro   # Contact
+│   └── styles/
+│       └── global.css      # design tokens (light/dark) + component overrides
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Getting Started
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Prerequisites: **Node.js ≥ 22.12** (see `package.json` `engines`).
 
-Any static assets, like images, can be placed in the `public/` directory.
+```sh
+pnpm install
+pnpm dev
+```
 
-## 🧞 Commands
+Open `http://localhost:4321`.
 
-All commands are run from the root of the project, from a terminal:
+## Commands
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+| Command           | Action                                        |
+| :---------------- | :-------------------------------------------- |
+| `pnpm install`    | Install dependencies                          |
+| `pnpm dev`        | Start local dev server at `localhost:4321`    |
+| `pnpm build`      | Build production site to `./dist/`            |
+| `pnpm preview`    | Preview the production build locally          |
+| `pnpm astro check`| Run Astro type checking                       |
 
-## 👀 Want to learn more?
+## Adding a Blog Post
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Create a new Markdown file in `src/content/blog/`, e.g. `07-my-post.md`.
+2. Add frontmatter matching the collection schema in `src/content.config.ts`:
+
+   ```md
+   ---
+   title: "My Post Title"
+   date: 2025-11-01
+   description: "Short summary shown on the blog listing page."
+   author: "Team Member"
+   tags: [strategy, branding]
+   ---
+
+   Your post body in Markdown here.
+   ```
+
+3. The post is automatically available at `/blog/my-post/`.
+
+> `date` field supports ISO date strings. `tags` is optional.
+
+## Theming
+
+All colors, surfaces, and borders are CSS custom properties defined in `src/styles/global.css`:
+
+- `:root` — light theme (default)
+- `[data-theme="dark"]` — dark theme
+
+The active theme is set on the `<html>` element by the inline script in `Layout.astro` (reads `localStorage`, falls back to `prefers-color-scheme`). During client-side navigation the theme is re-applied via the `astro:page-load` handler.
+
+## Support me
+
+If you like my content or want to support my work on GitHub, you can support me with a very small donation. 
+<br/>
+I would be grateful 🥹
+
+<a href="https://www.buymeacoffee.com/domenicotenace" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
