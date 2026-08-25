@@ -1,17 +1,34 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+	<div class="has-text-centered" style="padding: 4rem 0;">
+		<h1 class="title is-1">Welcome to Studio Pulse</h1>
+		<p class="subtitle is-4 mt-4">
+			We craft innovative digital experiences that resonate.
+		</p>
+		<a class="button is-primary is-large mt-5" href="/about">Learn More</a>
+	</div>
+
+	<div class="columns is-multiline mt-6">
+		<div class="column is-one-third">
+			<div class="box has-text-centered">
+				<h2 class="title is-4">Design</h2>
+				<p>Beautiful, user-centered interfaces that engage and delight.</p>
+			</div>
+		</div>
+		<div class="column is-one-third">
+			<div class="box has-text-centered">
+				<h2 class="title is-4">Development</h2>
+				<p>Robust, scalable applications built with modern technology.</p>
+			</div>
+		</div>
+		<div class="column is-one-third">
+			<div class="box has-text-centered">
+				<h2 class="title is-4">Strategy</h2>
+				<p>Data-driven insights to guide your digital transformation.</p>
+			</div>
+		</div>
+	</div>
+</Layout>
