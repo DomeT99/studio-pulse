@@ -1,0 +1,64 @@
+---
+import "bulma/css/bulma.min.css";
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} — Studio Pulse</title>
+	</head>
+	<body>
+		<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item has-text-weight-bold is-size-4" href="/">
+					Studio Pulse
+				</a>
+				<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar" href="#">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
+			<div id="mainNavbar" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item" href="/">Home</a>
+					<a class="navbar-item" href="/about">About Us</a>
+					<a class="navbar-item" href="/contact">Contact</a>
+				</div>
+			</div>
+		</nav>
+
+		<main class="section">
+			<div class="container">
+				<slot />
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="content has-text-centered">
+				<p>&copy; {new Date().getFullYear()} Studio Pulse. All rights reserved.</p>
+			</div>
+		</footer>
+
+		<script>
+			document.querySelectorAll(".navbar-burger").forEach((el) => {
+				el.addEventListener("click", () => {
+					const target = el.getAttribute("data-target");
+					const menu = document.getElementById(target);
+					el.classList.toggle("is-active");
+					menu.classList.toggle("is-active");
+				});
+			});
+		</script>
+	</body>
+</html>

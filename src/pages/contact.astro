@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact">
+	<div class="has-text-centered mb-6">
+		<h1 class="title is-1">Contact</h1>
+		<p class="subtitle is-4">We'd love to hear from you.</p>
+	</div>
+
+	<div class="columns is-centered">
+		<div class="column is-half">
+			<div class="box">
+				<div class="field">
+					<label class="label" for="name">Name</label>
+					<div class="control">
+						<input class="input" id="name" type="text" placeholder="Your name" />
+					</div>
+				</div>
+				<div class="field">
+					<label class="label" for="email">Email</label>
+					<div class="control">
+						<input class="input" id="email" type="email" placeholder="your@email.com" />
+					</div>
+				</div>
+				<div class="field">
+					<label class="label" for="message">Message</label>
+					<div class="control">
+						<textarea class="textarea" id="message" placeholder="How can we help?" rows="5"></textarea>
+					</div>
+				</div>
+				<div class="field">
+					<div class="control">
+						<button class="button is-primary is-fullwidth">Send Message</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="has-text-centered mt-5">
+				<p class="mb-2"><strong>Email:</strong> hello@studiopulse.com</p>
+				<p class="mb-2"><strong>Phone:</strong> +1 (555) 123-4567</p>
+				<p><strong>Address:</strong> 123 Creative Lane, San Francisco, CA 94107</p>
+			</div>
+		</div>
+	</div>
+</Layout>
