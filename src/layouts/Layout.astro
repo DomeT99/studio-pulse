@@ -5,13 +5,18 @@ import "../styles/global.css";
 export interface Props {
     title: string;
     description?: string;
+    currentPage?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, currentPage } = Astro.props;
 
 const metaDescription =
     description ??
     "Studio Pulse — Full-service communication agency. Brand strategy, creative direction, digital, and content.";
+
+function isCurrent(page: string) {
+    return currentPage === page ? { "aria-current": "page" as const } : {};
+}
 ---
 
 <!doctype html>
@@ -38,9 +43,10 @@ const metaDescription =
         <title>{title} — Studio Pulse</title>
     </head>
     <body>
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
         <nav
             class="navbar is-dark"
-            role="navigation"
             aria-label="main navigation"
         >
             <div class="navbar-brand">
@@ -61,14 +67,14 @@ const metaDescription =
             </div>
             <div id="mainNavbar" class="navbar-menu">
                 <div class="navbar-end">
-                    <a class="navbar-item" href="/">Home</a>
-                    <a class="navbar-item" href="/about">About</a>
-                    <a class="navbar-item" href="/contact">Contact</a>
+                    <a class="navbar-item" href="/" {...isCurrent("home")}>Home</a>
+                    <a class="navbar-item" href="/about" {...isCurrent("about")}>About</a>
+                    <a class="navbar-item" href="/contact" {...isCurrent("contact")}>Contact</a>
                 </div>
             </div>
         </nav>
 
-        <main>
+        <main id="main-content">
             <slot />
         </main>
 

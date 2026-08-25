@@ -211,6 +211,34 @@ body {
   background-color: hsl(240, 4%, 14%);
 }
 
+.navbar-burger:focus-visible {
+  outline: 2px solid var(--sp-primary);
+  outline-offset: -4px;
+  border-radius: 4px;
+}
+
+/* ---------- Skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background-color: var(--sp-primary);
+  color: var(--sp-white);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  transform: translateY(-200%);
+  transition: transform 0.1s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 /* ---------- Hero / Gradient section ---------- */
 
 .section-hero {
@@ -473,6 +501,11 @@ hr {
 .gap-sm { gap: 0.75rem; }
 .gap-md { gap: 1.5rem; }
 .gap-lg { gap: 3rem; }
+
+ul.columns {
+  padding-left: 0;
+  list-style: none;
+}
 
 .u-constrained {
   max-width: 640px;

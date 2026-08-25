@@ -7,10 +7,8 @@ export interface Props {
 const { title, icon } = Astro.props;
 ---
 
-<div class="column is-one-third">
-    <div class="box">
-        {icon && <span class="icon-lg mb-4">{icon}</span>}
-        <h3 class="title is-4">{title}</h3>
-        <p><slot /></p>
-    </div>
+<div class="box">
+    {icon && <span class="icon-lg mb-4" aria-hidden="true">{icon}</span>}
+    <h3 class="title is-4">{title}</h3>
+    <p><slot /></p>
 </div>

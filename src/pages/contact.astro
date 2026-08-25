@@ -2,11 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Contact">
-	<section class="section section-hero">
+<Layout title="Contact" currentPage="contact">
+	<section class="section section-hero" aria-labelledby="contact-heading">
 		<div class="container has-text-centered">
 			<p class="tag is-primary is-medium mb-5">Contact</p>
-			<h1 class="title is-1 has-text-white">
+			<h1 id="contact-heading" class="title is-1 has-text-white">
 				Let's make something great
 			</h1>
 			<p class="subtitle is-4 mt-4 u-constrained-sm">
@@ -16,19 +16,19 @@ import Layout from "../layouts/Layout.astro";
 		</div>
 	</section>
 
-	<section class="section has-bg-elevated">
+	<section class="section has-bg-elevated" aria-label="Contact form">
 		<div class="container u-constrained-md">
-			<div class="box is-spacious">
+			<form class="box is-spacious">
 				<div class="field">
 					<label class="label" for="name">Full name</label>
 					<div class="control">
-						<input class="input is-medium" id="name" type="text" placeholder="Jane Cooper" />
+						<input class="input is-medium" id="name" type="text" placeholder="Jane Cooper" required autocomplete="name" />
 					</div>
 				</div>
 				<div class="field">
 					<label class="label" for="email">Work email</label>
 					<div class="control">
-						<input class="input is-medium" id="email" type="email" placeholder="jane@company.com" />
+						<input class="input is-medium" id="email" type="email" placeholder="jane@company.com" required autocomplete="email" />
 					</div>
 				</div>
 				<div class="field">
@@ -37,10 +37,10 @@ import Layout from "../layouts/Layout.astro";
 						<div class="select is-medium is-fullwidth">
 							<select id="budget" required>
 								<option value="" disabled selected>Select a range</option>
-								<option value="10k-25k">&dollar;10k – &dollar;25k</option>
-								<option value="25k-50k">&dollar;25k – &dollar;50k</option>
-								<option value="50k-100k">&dollar;50k – &dollar;100k</option>
-								<option value="100k+">&dollar;100k+</option>
+								<option value="10k-25k">$10k – $25k</option>
+								<option value="25k-50k">$25k – $50k</option>
+								<option value="50k-100k">$50k – $100k</option>
+								<option value="100k+">$100k+</option>
 							</select>
 						</div>
 					</div>
@@ -53,12 +53,12 @@ import Layout from "../layouts/Layout.astro";
 				</div>
 				<div class="field mt-5">
 					<div class="control">
-						<button class="button is-primary is-medium is-fullwidth">
+						<button class="button is-primary is-medium is-fullwidth" type="submit">
 							Send message
 						</button>
 					</div>
 				</div>
-			</div>
+			</form>
 
 			<div class="has-text-centered mt-6">
 				<p class="is-size-5 has-text-weight-semibold has-text-white mb-4">
