@@ -1,11 +1,59 @@
 /* ==========================================
    Studio Pulse — Global CSS
-   Communication Agency · Dark · Bold
+   Communication Agency · Light + Dark
    ========================================== */
 
-/* ---------- Palette ---------- */
+/* ======================================
+   Light theme (default) — Editorial
+   Off-white / charcoal / vermillion
+   ====================================== */
 
 :root {
+  --sp-bg:            hsl(30 20% 97%);
+  --sp-bg-elevated:   hsl(30 15% 94%);
+  --sp-bg-card:       hsl(0 0% 100%);
+  --sp-surface:       hsl(30 10% 92%);
+  --sp-border:        hsl(30 8% 84%);
+  --sp-border-light:  hsl(30 8% 76%);
+
+  --sp-primary:       hsl(4, 90%, 50%);
+  --sp-primary-hover: hsl(4, 80%, 44%);
+  --sp-primary-soft:  hsl(4, 90%, 92%);
+
+  --sp-accent:        hsl(32, 85%, 46%);
+  --sp-accent-soft:   hsl(32, 80%, 88%);
+
+  --sp-text:          hsl(240 8% 12%);
+  --sp-text-muted:    hsl(240 4% 38%);
+  --sp-text-dim:      hsl(240 3% 54%);
+
+  --sp-white:         hsl(0, 0%, 100%);
+  --sp-error:         hsl(4, 80%, 48%);
+  --sp-success:       hsl(150, 60%, 36%);
+
+  --sp-navbar-bg:     hsl(30 20% 97% / 0.88);
+  --sp-navbar-border: hsl(30 8% 84%);
+  --sp-navbar-burger-hover-bg: hsl(30 8% 88%);
+
+  --sp-hero-grad-top:    hsl(4 90% 50% / 0.06);
+  --sp-hero-grad-bottom: hsl(262 70% 55% / 0.05);
+
+  --sp-footer-bg:       hsl(240 8% 10%);
+  --sp-footer-border:   hsl(240 8% 16%);
+  --sp-footer-text:     hsl(240 4% 62%);
+  --sp-footer-link:     hsl(240 4% 72%);
+
+  --sp-font-body:  "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --sp-font-mono:  ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+                   Consolas, "DejaVu Sans Mono", monospace;
+}
+
+/* ======================================
+   Dark theme
+   ====================================== */
+
+[data-theme="dark"] {
   --sp-bg:            hsl(240, 6%, 7%);
   --sp-bg-elevated:   hsl(240, 5%, 12%);
   --sp-bg-card:       hsl(240, 4%, 15%);
@@ -28,22 +76,31 @@
   --sp-error:         hsl(4, 80%, 56%);
   --sp-success:       hsl(150, 60%, 46%);
 
-  --sp-font-body:     "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-                      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --sp-font-mono:     ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
-                      Consolas, "DejaVu Sans Mono", monospace;
+  --sp-navbar-bg:     hsl(240 6% 8% / 0.85);
+  --sp-navbar-border: hsl(240 2% 15%);
+  --sp-navbar-burger-hover-bg: hsl(240, 4%, 14%);
+
+  --sp-hero-grad-top:    hsl(4 90% 50% / 0.08);
+  --sp-hero-grad-bottom: hsl(262 80% 60% / 0.06);
+
+  --sp-footer-bg:       hsl(240, 7%, 5%);
+  --sp-footer-border:   hsl(240, 2%, 12%);
+  --sp-footer-text:     hsl(220, 8%, 54%);
+  --sp-footer-link:     hsl(220, 8%, 62%);
 }
 
-/* ---------- Bulma scheme overrides ---------- */
+/* ======================================
+   Bulma scheme overrides
+   ====================================== */
 
 :root {
   --bulma-scheme-h: 240;
   --bulma-scheme-s: 6%;
-  --bulma-scheme-l: 7%;
+  --bulma-scheme-l: 97%;
 
   --bulma-background: var(--sp-bg);
   --bulma-text: var(--sp-text);
-  --bulma-text-strong: var(--sp-white);
+  --bulma-text-strong: var(--sp-text);
   --bulma-text-weak: var(--sp-text-muted);
 
   --bulma-border: var(--sp-border);
@@ -85,15 +142,23 @@
   --bulma-dark: var(--sp-bg);
   --bulma-dark-h: 240;
   --bulma-dark-s: 6%;
-  --bulma-dark-l: 7%;
+  --bulma-dark-l: 10%;
 
   --bulma-light: var(--sp-bg-elevated);
   --bulma-light-h: 240;
   --bulma-light-s: 5%;
+  --bulma-light-l: 94%;
+}
+
+[data-theme="dark"] {
+  --bulma-scheme-l: 7%;
+  --bulma-dark-l: 7%;
   --bulma-light-l: 12%;
 }
 
-/* ---------- Typography ---------- */
+/* ======================================
+   Typography
+   ====================================== */
 
 :root {
   --bulma-family-primary: var(--sp-font-body);
@@ -123,11 +188,13 @@
 .content h1,
 .content h2,
 .content h3 {
-  color: var(--sp-white);
+  color: var(--sp-text);
   letter-spacing: -0.025em;
 }
 
-/* ---------- Spacing ---------- */
+/* ======================================
+   Spacing
+   ====================================== */
 
 :root {
   --bulma-block-spacing: 1.75rem;
@@ -140,7 +207,9 @@
   max-width: 1200px;
 }
 
-/* ---------- Base ---------- */
+/* ======================================
+   Base
+   ====================================== */
 
 html {
   scroll-behavior: smooth;
@@ -151,19 +220,27 @@ body {
   color: var(--sp-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.35s ease;
 }
 
 ::selection {
   background-color: var(--sp-primary-soft);
+  color: var(--sp-primary);
+}
+
+[data-theme="dark"] ::selection {
   color: var(--sp-white);
 }
 
-/* ---------- Navbar ---------- */
+/* ======================================
+   Navbar
+   ====================================== */
 
 .navbar {
-  background-color: hsl(240 6% 8% / 0.85);
-  border-bottom: 1px solid hsl(240, 2%, 15%);
+  background-color: var(--sp-navbar-bg);
+  border-bottom: 1px solid var(--sp-navbar-border);
   min-height: 4rem;
+  transition: background-color 0.35s ease, border-color 0.35s ease;
 }
 
 .navbar-brand .navbar-item {
@@ -171,7 +248,8 @@ body {
   font-size: 1.375rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--sp-white);
+  color: var(--sp-text);
+  transition: color 0.2s ease;
 }
 
 .navbar-brand .navbar-item:hover {
@@ -188,7 +266,7 @@ body {
 }
 
 .navbar-item:hover {
-  color: var(--sp-white);
+  color: var(--sp-text);
   background-color: transparent;
 }
 
@@ -204,11 +282,12 @@ body {
 
 .navbar-burger {
   color: var(--sp-text-muted);
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .navbar-burger:hover {
-  color: var(--sp-white);
-  background-color: hsl(240, 4%, 14%);
+  color: var(--sp-text);
+  background-color: var(--sp-navbar-burger-hover-bg);
 }
 
 .navbar-burger:focus-visible {
@@ -217,7 +296,55 @@ body {
   border-radius: 4px;
 }
 
-/* ---------- Skip link ---------- */
+/* ======================================
+   Theme toggle
+   ====================================== */
+
+.theme-toggle {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  color: var(--sp-text-muted);
+  font-size: 1.25rem;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--sp-primary);
+  background-color: var(--sp-navbar-burger-hover-bg);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--sp-primary);
+  outline-offset: -2px;
+}
+
+[data-theme="dark"] .icon-sun {
+  display: inline;
+}
+
+[data-theme="dark"] .icon-moon {
+  display: none;
+}
+
+:root:not([data-theme="dark"]) .icon-sun {
+  display: none;
+}
+
+:root:not([data-theme="dark"]) .icon-moon {
+  display: inline;
+}
+
+/* ======================================
+   Skip link
+   ====================================== */
 
 .skip-link {
   position: absolute;
@@ -239,7 +366,9 @@ body {
   transform: translateY(0);
 }
 
-/* ---------- Hero / Gradient section ---------- */
+/* ======================================
+   Hero / Gradient section
+   ====================================== */
 
 .section-hero {
   position: relative;
@@ -251,12 +380,14 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, hsl(4 90% 50% / 0.08), transparent 70%),
-    radial-gradient(ellipse 50% 60% at 80% 100%, hsl(262 80% 60% / 0.06), transparent 70%);
+    radial-gradient(ellipse 60% 50% at 50% 0%, var(--sp-hero-grad-top), transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% 100%, var(--sp-hero-grad-bottom), transparent 70%);
   pointer-events: none;
 }
 
-/* ---------- Buttons ---------- */
+/* ======================================
+   Buttons
+   ====================================== */
 
 .button {
   border-radius: 0.5rem;
@@ -312,7 +443,9 @@ body {
   background-color: var(--sp-primary-soft);
 }
 
-/* ---------- Box / Cards ---------- */
+/* ======================================
+   Box / Cards
+   ====================================== */
 
 .box {
   background-color: var(--sp-bg-card);
@@ -330,11 +463,15 @@ body {
 .box:hover {
   border-color: var(--sp-border-light);
   transform: translateY(-2px);
+  box-shadow: 0 8px 30px hsl(0 0% 0% / 0.06);
+}
+
+[data-theme="dark"] .box:hover {
   box-shadow: 0 8px 30px hsl(0 0% 0% / 0.3);
 }
 
 .box .title {
-  color: var(--sp-white);
+  color: var(--sp-text);
   font-size: 1.25rem;
 }
 
@@ -343,7 +480,9 @@ body {
   line-height: 1.6;
 }
 
-/* ---------- Form inputs ---------- */
+/* ======================================
+   Form inputs
+   ====================================== */
 
 .input,
 .textarea {
@@ -404,7 +543,9 @@ body {
   border-color: var(--sp-primary);
 }
 
-/* ---------- Content typography ---------- */
+/* ======================================
+   Content typography
+   ====================================== */
 
 .content p,
 .content li {
@@ -425,17 +566,19 @@ body {
   text-underline-offset: 3px;
 }
 
-/* ---------- Footer ---------- */
+/* ======================================
+   Footer — always dark
+   ====================================== */
 
 .footer {
-  background-color: hsl(240, 7%, 5%);
-  border-top: 1px solid hsl(240, 2%, 12%);
-  color: var(--sp-text-dim);
+  background-color: var(--sp-footer-bg);
+  border-top: 1px solid var(--sp-footer-border);
+  color: var(--sp-footer-text);
   padding: 4rem 1.5rem;
 }
 
 .footer a {
-  color: var(--sp-text-muted);
+  color: var(--sp-footer-link);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -447,10 +590,16 @@ body {
 
 .footer .content p,
 .footer .content {
-  color: var(--sp-text-dim);
+  color: var(--sp-footer-text);
 }
 
-/* ---------- Tags / Badges ---------- */
+.footer strong.has-text-white {
+  color: var(--sp-white) !important;
+}
+
+/* ======================================
+   Tags / Badges
+   ====================================== */
 
 .tag {
   border-radius: 999px;
@@ -460,7 +609,9 @@ body {
   text-transform: uppercase;
 }
 
-/* ---------- Divider / Separator ---------- */
+/* ======================================
+   Divider
+   ====================================== */
 
 hr {
   background-color: var(--sp-border);
@@ -468,14 +619,18 @@ hr {
   height: 1px;
 }
 
-/* ---------- Utility ---------- */
+/* ======================================
+   Utility
+   ====================================== */
 
 .has-bg-elevated {
   background-color: var(--sp-bg-elevated);
+  transition: background-color 0.35s ease;
 }
 
 .has-bg-card {
   background-color: var(--sp-bg-card);
+  transition: background-color 0.35s ease;
 }
 
 .has-text-muted {
@@ -484,6 +639,10 @@ hr {
 
 .has-text-accent {
   color: var(--sp-accent);
+}
+
+.has-text-white {
+  color: var(--sp-text) !important;
 }
 
 .rounded-lg {
@@ -533,7 +692,9 @@ ul.columns {
   letter-spacing: 0.1em;
 }
 
-/* ---------- Scrollbar ---------- */
+/* ======================================
+   Scrollbar
+   ====================================== */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -552,7 +713,31 @@ ul.columns {
   background: var(--sp-text-dim);
 }
 
-/* ---------- Reduced motion ---------- */
+/* ======================================
+   View Transitions — simple fade
+   ====================================== */
+
+::view-transition-old(root) {
+  animation: vt-fade-out 0.2s ease both;
+}
+
+::view-transition-new(root) {
+  animation: vt-fade-in 0.3s ease both;
+}
+
+@keyframes vt-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes vt-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ======================================
+   Reduced motion
+   ====================================== */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -565,5 +750,10 @@ ul.columns {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
   }
 }
