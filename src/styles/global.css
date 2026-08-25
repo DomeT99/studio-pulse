@@ -28,7 +28,6 @@
   --sp-error:         hsl(4, 80%, 56%);
   --sp-success:       hsl(150, 60%, 46%);
 
-  --sp-font-display:  "Inter", system-ui, sans-serif;
   --sp-font-body:     "Inter", system-ui, -apple-system, BlinkMacSystemFont,
                       "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   --sp-font-mono:     ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
@@ -98,7 +97,7 @@
 
 :root {
   --bulma-family-primary: var(--sp-font-body);
-  --bulma-family-secondary: var(--sp-font-display);
+  --bulma-family-secondary: var(--sp-font-body);
   --bulma-family-code: var(--sp-font-mono);
 
   --bulma-body-size: 1.0625rem;
@@ -168,7 +167,7 @@ body {
 }
 
 .navbar-brand .navbar-item {
-  font-family: var(--sp-font-display);
+  font-family: var(--sp-font-body);
   font-size: 1.375rem;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -463,6 +462,14 @@ hr {
   border-radius: 0.75rem;
 }
 
+.icon-lg {
+  font-size: 2rem;
+}
+
+.box.is-spacious {
+  padding: 3rem;
+}
+
 .gap-sm { gap: 0.75rem; }
 .gap-md { gap: 1.5rem; }
 .gap-lg { gap: 3rem; }
@@ -475,6 +482,12 @@ hr {
 
 .u-constrained-sm {
   max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.u-constrained-md {
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
 }

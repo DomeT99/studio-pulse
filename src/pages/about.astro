@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="About Us">
@@ -60,60 +61,30 @@ import Layout from "../layouts/Layout.astro";
 				</h2>
 			</div>
 			<div class="columns is-multiline">
-				<div class="column is-one-third">
-					<div class="box">
-						<h3 class="title is-4">Craft over volume</h3>
-						<p>
-							We take on fewer projects so we can go deeper. Every pixel,
-							every word, every frame matters.
-						</p>
-					</div>
-				</div>
-				<div class="column is-one-third">
-					<div class="box">
-						<h3 class="title is-4">Strategy drives creative</h3>
-						<p>
-							Beautiful work without thinking behind it is decoration.
-							We anchor every idea in insight.
-						</p>
-					</div>
-				</div>
-				<div class="column is-one-third">
-					<div class="box">
-						<h3 class="title is-4">No egos, just outcomes</h3>
-						<p>
-							Ideas win on merit. We check titles at the door and
-							rally around the best path forward.
-						</p>
-					</div>
-				</div>
-				<div class="column is-one-third">
-					<div class="box">
-						<h3 class="title is-4">Ship, learn, iterate</h3>
-						<p>
-							Perfectionism kills momentum. We bias toward action,
-							measure real results, and refine relentlessly.
-						</p>
-					</div>
-				</div>
-				<div class="column is-one-third">
-					<div class="box">
-						<h3 class="title is-4">Radical transparency</h3>
-						<p>
-							Clients see everything: timelines, work-in-progress,
-							challenges. Trust is built in the open.
-						</p>
-					</div>
-				</div>
-				<div class="column is-one-third">
-					<div class="box">
-						<h3 class="title is-4">Long-term partnership</h3>
-						<p>
-							We're not a one-and-done agency. We invest in
-							relationships that grow with every collaboration.
-						</p>
-					</div>
-				</div>
+				<Card title="Craft over volume">
+					We take on fewer projects so we can go deeper. Every pixel,
+					every word, every frame matters.
+				</Card>
+				<Card title="Strategy drives creative">
+					Beautiful work without thinking behind it is decoration.
+					We anchor every idea in insight.
+				</Card>
+				<Card title="No egos, just outcomes">
+					Ideas win on merit. We check titles at the door and
+					rally around the best path forward.
+				</Card>
+				<Card title="Ship, learn, iterate">
+					Perfectionism kills momentum. We bias toward action,
+					measure real results, and refine relentlessly.
+				</Card>
+				<Card title="Radical transparency">
+					Clients see everything: timelines, work-in-progress,
+					challenges. Trust is built in the open.
+				</Card>
+				<Card title="Long-term partnership">
+					We're not a one-and-done agency. We invest in
+					relationships that grow with every collaboration.
+				</Card>
 			</div>
 		</div>
 	</section>

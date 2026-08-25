@@ -4,9 +4,14 @@ import "../styles/global.css";
 
 export interface Props {
     title: string;
+    description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
+
+const metaDescription =
+    description ??
+    "Studio Pulse — Full-service communication agency. Brand strategy, creative direction, digital, and content.";
 ---
 
 <!doctype html>
@@ -15,11 +20,21 @@ const { title } = Astro.props;
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
-        <meta name="description" content="Studio Pulse — Full-service communication agency. Brand strategy, creative direction, digital, and content." />
+        <meta name="description" content={metaDescription} />
         <meta name="generator" content={Astro.generator} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400;1,14..32,600&display=swap" rel="stylesheet" />
+        <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+            media="print"
+            onload="this.media='all'"
+        />
         <title>{title} — Studio Pulse</title>
     </head>
     <body>
@@ -72,10 +87,11 @@ const { title } = Astro.props;
             document.querySelectorAll(".navbar-burger").forEach((el) => {
                 el.addEventListener("click", () => {
                     const target = el.getAttribute("data-target");
-                    const menu = document.getElementById(target!);
+                    const menu = target ? document.getElementById(target) : null;
+                    if (!menu) return;
                     const expanded = el.classList.toggle("is-active");
                     el.setAttribute("aria-expanded", String(expanded));
-                    menu!.classList.toggle("is-active");
+                    menu.classList.toggle("is-active");
                 });
             });
         </script>

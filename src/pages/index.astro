@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Home">
@@ -32,66 +33,30 @@ import Layout from "../layouts/Layout.astro";
 				</h2>
 			</div>
 			<div class="columns is-multiline">
-				<div class="column is-one-third">
-					<div class="box">
-						<span class="icon-text mb-4" style="font-size: 2rem;">🎯</span>
-						<h3 class="title is-4">Brand Strategy</h3>
-						<p>
-							Positioning, architecture, and narrative frameworks that
-							give your brand clarity and conviction in crowded markets.
-						</p>
-					</div>
-				</div>
-				<div class="column is-one-third">
-					<div class="box">
-						<span class="icon-text mb-4" style="font-size: 2rem;">✨</span>
-						<h3 class="title is-4">Creative Direction</h3>
-						<p>
-							Visual identity, art direction, and campaign concepts that
-							stop the scroll and stick in memory.
-						</p>
-					</div>
-				</div>
-				<div class="column is-one-third">
-					<div class="box">
-						<span class="icon-text mb-4" style="font-size: 2rem;">⚡</span>
-						<h3 class="title is-4">Digital & Motion</h3>
-						<p>
-							Websites, apps, and motion design built for performance,
-							crafted to feel as good as they look.
-						</p>
-					</div>
-				</div>
-				<div class="column is-one-third">
-					<div class="box">
-						<span class="icon-text mb-4" style="font-size: 2rem;">📣</span>
-						<h3 class="title is-4">Content & Social</h3>
-						<p>
-							Editorial strategy, copywriting, and social campaigns
-							that turn audiences into communities.
-						</p>
-					</div>
-				</div>
-				<div class="column is-one-third">
-					<div class="box">
-						<span class="icon-text mb-4" style="font-size: 2rem;">📐</span>
-						<h3 class="title is-4">UX & Product Design</h3>
-						<p>
-							Research-driven interfaces, design systems, and prototypes
-							that ship fast and scale gracefully.
-						</p>
-					</div>
-				</div>
-				<div class="column is-one-third">
-					<div class="box">
-						<span class="icon-text mb-4" style="font-size: 2rem;">🎬</span>
-						<h3 class="title is-4">Video Production</h3>
-						<p>
-							From concept to final cut — commercial, branded content,
-							and storytelling that moves people.
-						</p>
-					</div>
-				</div>
+				<Card title="Brand Strategy" icon="🎯">
+					Positioning, architecture, and narrative frameworks that
+					give your brand clarity and conviction in crowded markets.
+				</Card>
+				<Card title="Creative Direction" icon="✨">
+					Visual identity, art direction, and campaign concepts that
+					stop the scroll and stick in memory.
+				</Card>
+				<Card title="Digital & Motion" icon="⚡">
+					Websites, apps, and motion design built for performance,
+					crafted to feel as good as they look.
+				</Card>
+				<Card title="Content & Social" icon="📣">
+					Editorial strategy, copywriting, and social campaigns
+					that turn audiences into communities.
+				</Card>
+				<Card title="UX & Product Design" icon="📐">
+					Research-driven interfaces, design systems, and prototypes
+					that ship fast and scale gracefully.
+				</Card>
+				<Card title="Video Production" icon="🎬">
+					From concept to final cut — commercial, branded content,
+					and storytelling that moves people.
+				</Card>
 			</div>
 		</div>
 	</section>
