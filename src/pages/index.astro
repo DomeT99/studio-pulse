@@ -3,32 +3,112 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Home">
-	<div class="has-text-centered" style="padding: 4rem 0;">
-		<h1 class="title is-1">Welcome to Studio Pulse</h1>
-		<p class="subtitle is-4 mt-4">
-			We craft innovative digital experiences that resonate.
-		</p>
-		<a class="button is-primary is-large mt-5" href="/about">Learn More</a>
-	</div>
+	<section class="section section-hero">
+		<div class="container has-text-centered">
+			<p class="tag is-primary is-medium mb-5">Creative Studio</p>
+			<h1 class="title is-1 has-text-white">
+				We make brands<br /> impossible to ignore
+			</h1>
+			<p class="subtitle is-4 mt-4" style="max-width: 640px; margin-left: auto; margin-right: auto;">
+				Studio Pulse is a full-service communication agency that
+				blends creative direction, brand strategy, and digital craft
+				to build experiences that demand attention.
+			</p>
+			<div class="buttons is-centered mt-6">
+				<a class="button is-primary is-large" href="/contact">Start a project</a>
+				<a class="button is-outlined is-large" href="/about">Our work</a>
+			</div>
+		</div>
+	</section>
 
-	<div class="columns is-multiline mt-6">
-		<div class="column is-one-third">
-			<div class="box has-text-centered">
-				<h2 class="title is-4">Design</h2>
-				<p>Beautiful, user-centered interfaces that engage and delight.</p>
+	<section class="section has-bg-elevated">
+		<div class="container">
+			<div class="has-text-centered mb-6">
+				<p class="has-text-muted is-uppercase is-size-7 has-text-weight-semibold" style="letter-spacing: 0.1em;">
+					What we do
+				</p>
+				<h2 class="title is-2 has-text-white mt-3">
+					Everything your brand needs,<br /> under one roof
+				</h2>
+			</div>
+			<div class="columns is-multiline">
+				<div class="column is-one-third">
+					<div class="box">
+						<span class="icon-text mb-4" style="font-size: 2rem;">🎯</span>
+						<h3 class="title is-4">Brand Strategy</h3>
+						<p>
+							Positioning, architecture, and narrative frameworks that
+							give your brand clarity and conviction in crowded markets.
+						</p>
+					</div>
+				</div>
+				<div class="column is-one-third">
+					<div class="box">
+						<span class="icon-text mb-4" style="font-size: 2rem;">✨</span>
+						<h3 class="title is-4">Creative Direction</h3>
+						<p>
+							Visual identity, art direction, and campaign concepts that
+							stop the scroll and stick in memory.
+						</p>
+					</div>
+				</div>
+				<div class="column is-one-third">
+					<div class="box">
+						<span class="icon-text mb-4" style="font-size: 2rem;">⚡</span>
+						<h3 class="title is-4">Digital & Motion</h3>
+						<p>
+							Websites, apps, and motion design built for performance,
+							crafted to feel as good as they look.
+						</p>
+					</div>
+				</div>
+				<div class="column is-one-third">
+					<div class="box">
+						<span class="icon-text mb-4" style="font-size: 2rem;">📣</span>
+						<h3 class="title is-4">Content & Social</h3>
+						<p>
+							Editorial strategy, copywriting, and social campaigns
+							that turn audiences into communities.
+						</p>
+					</div>
+				</div>
+				<div class="column is-one-third">
+					<div class="box">
+						<span class="icon-text mb-4" style="font-size: 2rem;">📐</span>
+						<h3 class="title is-4">UX & Product Design</h3>
+						<p>
+							Research-driven interfaces, design systems, and prototypes
+							that ship fast and scale gracefully.
+						</p>
+					</div>
+				</div>
+				<div class="column is-one-third">
+					<div class="box">
+						<span class="icon-text mb-4" style="font-size: 2rem;">🎬</span>
+						<h3 class="title is-4">Video Production</h3>
+						<p>
+							From concept to final cut — commercial, branded content,
+							and storytelling that moves people.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="column is-one-third">
-			<div class="box has-text-centered">
-				<h2 class="title is-4">Development</h2>
-				<p>Robust, scalable applications built with modern technology.</p>
-			</div>
+	</section>
+
+	<section class="section">
+		<div class="container has-text-centered">
+			<p class="tag is-info is-medium mb-5">Let's talk</p>
+			<h2 class="title is-2 has-text-white">
+				Ready to make noise?
+			</h2>
+			<p class="subtitle is-4 mt-3" style="max-width: 560px; margin-left: auto; margin-right: auto;">
+				The best brands don't whisper. Let's build something that
+				gets heard.
+			</p>
+			<a class="button is-primary is-large mt-5" href="/contact">
+				Get in touch
+			</a>
 		</div>
-		<div class="column is-one-third">
-			<div class="box has-text-centered">
-				<h2 class="title is-4">Strategy</h2>
-				<p>Data-driven insights to guide your digital transformation.</p>
-			</div>
-		</div>
-	</div>
+	</section>
 </Layout>

@@ -1,5 +1,6 @@
 ---
 import "bulma/css/bulma.min.css";
+import "../styles/global.css";
 
 export interface Props {
     title: string;
@@ -9,22 +10,25 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400;1,14..32,600&display=swap" rel="stylesheet" />
         <title>{title} — Studio Pulse</title>
     </head>
     <body>
         <nav
-            class="navbar is-dark"
+            class="navbar"
             role="navigation"
             aria-label="main navigation"
         >
             <div class="navbar-brand">
-                <a class="navbar-item has-text-weight-bold is-size-4" href="/">
+                <a class="navbar-item" href="/">
                     Studio Pulse
                 </a>
                 <a
@@ -41,22 +45,23 @@ const { title } = Astro.props;
                 </a>
             </div>
             <div id="mainNavbar" class="navbar-menu">
-                <div class="navbar-start">
+                <div class="navbar-end">
                     <a class="navbar-item" href="/">Home</a>
-                    <a class="navbar-item" href="/about">About Us</a>
+                    <a class="navbar-item" href="/about">About</a>
                     <a class="navbar-item" href="/contact">Contact</a>
                 </div>
             </div>
         </nav>
 
-        <main class="section">
-            <div class="container">
-                <slot />
-            </div>
+        <main>
+            <slot />
         </main>
 
         <footer class="footer">
             <div class="content has-text-centered">
+                <p class="mb-2">
+                    <strong class="has-text-white">Studio Pulse</strong>
+                </p>
                 <p>
                     &copy; {new Date().getFullYear()} Studio Pulse. All rights reserved.
                 </p>

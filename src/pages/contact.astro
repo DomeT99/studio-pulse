@@ -3,44 +3,73 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Contact">
-	<div class="has-text-centered mb-6">
-		<h1 class="title is-1">Contact</h1>
-		<p class="subtitle is-4">We'd love to hear from you.</p>
-	</div>
+	<section class="section section-hero">
+		<div class="container has-text-centered">
+			<p class="tag is-primary is-medium mb-5">Contact</p>
+			<h1 class="title is-1 has-text-white">
+				Let's make something great
+			</h1>
+			<p class="subtitle is-4 mt-4" style="max-width: 560px; margin-left: auto; margin-right: auto;">
+				New project, partnership, or just want to say hello?
+				We read every message.
+			</p>
+		</div>
+	</section>
 
-	<div class="columns is-centered">
-		<div class="column is-half">
-			<div class="box">
+	<section class="section has-bg-elevated">
+		<div class="container" style="max-width: 720px;">
+			<div class="box" style="padding: 3rem;">
 				<div class="field">
-					<label class="label" for="name">Name</label>
+					<label class="label" for="name">Full name</label>
 					<div class="control">
-						<input class="input" id="name" type="text" placeholder="Your name" />
+						<input class="input is-medium" id="name" type="text" placeholder="Jane Cooper" />
 					</div>
 				</div>
 				<div class="field">
-					<label class="label" for="email">Email</label>
+					<label class="label" for="email">Work email</label>
 					<div class="control">
-						<input class="input" id="email" type="email" placeholder="your@email.com" />
+						<input class="input is-medium" id="email" type="email" placeholder="jane@company.com" />
 					</div>
 				</div>
 				<div class="field">
-					<label class="label" for="message">Message</label>
+					<label class="label" for="budget">Budget range</label>
 					<div class="control">
-						<textarea class="textarea" id="message" placeholder="How can we help?" rows="5"></textarea>
+						<div class="select is-medium is-fullwidth">
+							<select id="budget">
+								<option value="">Select a range</option>
+								<option value="10k-25k">&dollar;10k – &dollar;25k</option>
+								<option value="25k-50k">&dollar;25k – &dollar;50k</option>
+								<option value="50k-100k">&dollar;50k – &dollar;100k</option>
+								<option value="100k+">&dollar;100k+</option>
+							</select>
+						</div>
 					</div>
 				</div>
 				<div class="field">
+					<label class="label" for="message">Tell us about the project</label>
 					<div class="control">
-						<button class="button is-primary is-fullwidth">Send Message</button>
+						<textarea class="textarea is-medium" id="message" placeholder="Goals, timeline, what success looks like..." rows="5"></textarea>
+					</div>
+				</div>
+				<div class="field mt-5">
+					<div class="control">
+						<button class="button is-primary is-medium is-fullwidth">
+							Send message
+						</button>
 					</div>
 				</div>
 			</div>
 
-			<div class="has-text-centered mt-5">
-				<p class="mb-2"><strong>Email:</strong> hello@studiopulse.com</p>
-				<p class="mb-2"><strong>Phone:</strong> +1 (555) 123-4567</p>
-				<p><strong>Address:</strong> 123 Creative Lane, San Francisco, CA 94107</p>
+			<div class="has-text-centered mt-6">
+				<p class="is-size-5 has-text-weight-semibold has-text-white mb-4">
+					Prefer to reach out directly?
+				</p>
+				<p class="mb-2">
+					<a href="mailto:hello@studiopulse.com" class="has-text-primary">hello@studiopulse.com</a>
+				</p>
+				<p class="mb-2 has-text-muted">+1 (555) 123-4567</p>
+				<p class="has-text-muted">123 Creative Lane, San Francisco, CA 94107</p>
 			</div>
 		</div>
-	</div>
+	</section>
 </Layout>

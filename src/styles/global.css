@@ -1,0 +1,509 @@
+/* ==========================================
+   Studio Pulse — Global CSS
+   Communication Agency · Dark · Bold
+   ========================================== */
+
+/* ---------- Palette ---------- */
+
+:root {
+  --sp-bg:            hsl(240, 6%, 7%);
+  --sp-bg-elevated:   hsl(240, 5%, 12%);
+  --sp-bg-card:       hsl(240, 4%, 15%);
+  --sp-surface:       hsl(240, 3%, 18%);
+  --sp-border:        hsl(240, 2%, 22%);
+  --sp-border-light:  hsl(240, 2%, 28%);
+
+  --sp-primary:       hsl(4, 90%, 58%);
+  --sp-primary-hover: hsl(4, 80%, 52%);
+  --sp-primary-soft:  hsl(4, 70%, 18%);
+
+  --sp-accent:        hsl(42, 96%, 58%);
+  --sp-accent-soft:   hsl(42, 80%, 16%);
+
+  --sp-text:          hsl(220, 12%, 92%);
+  --sp-text-muted:    hsl(220, 8%, 62%);
+  --sp-text-dim:      hsl(220, 6%, 42%);
+
+  --sp-white:         hsl(0, 0%, 98%);
+  --sp-error:         hsl(4, 80%, 56%);
+  --sp-success:       hsl(150, 60%, 46%);
+
+  /* Font stacks */
+  --sp-font-display:  "Clash Display", "Inter", system-ui, sans-serif;
+  --sp-font-body:     "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+                      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --sp-font-mono:     "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+}
+
+/* ---------- Bulma scheme overrides ---------- */
+
+:root {
+  --bulma-scheme-h: 240;
+  --bulma-scheme-s: 6%;
+  --bulma-scheme-l: 7%;
+
+  --bulma-background: var(--sp-bg);
+  --bulma-text: var(--sp-text);
+  --bulma-text-strong: var(--sp-white);
+  --bulma-text-weak: var(--sp-text-muted);
+
+  --bulma-border: var(--sp-border);
+  --bulma-border-strong: var(--sp-border-light);
+
+  --bulma-primary: var(--sp-primary);
+  --bulma-primary-h: 4;
+  --bulma-primary-s: 90%;
+  --bulma-primary-l: 58%;
+
+  --bulma-primary-soft: var(--sp-primary-soft);
+  --bulma-primary-bold: var(--sp-primary-hover);
+
+  --bulma-link: var(--sp-primary);
+  --bulma-link-h: 4;
+  --bulma-link-s: 90%;
+  --bulma-link-l: 58%;
+
+  --bulma-link-text: var(--sp-primary);
+  --bulma-link-text-h: 4;
+  --bulma-link-text-s: 90%;
+  --bulma-link-text-l: 58%;
+
+  --bulma-info: var(--sp-accent);
+  --bulma-info-h: 42;
+  --bulma-info-s: 96%;
+  --bulma-info-l: 58%;
+
+  --bulma-success: var(--sp-success);
+  --bulma-success-h: 150;
+  --bulma-success-s: 60%;
+  --bulma-success-l: 46%;
+
+  --bulma-danger: var(--sp-error);
+  --bulma-danger-h: 4;
+  --bulma-danger-s: 80%;
+  --bulma-danger-l: 56%;
+
+  --bulma-dark: var(--sp-bg);
+  --bulma-dark-h: 240;
+  --bulma-dark-s: 6%;
+  --bulma-dark-l: 7%;
+
+  --bulma-light: var(--sp-bg-elevated);
+  --bulma-light-h: 240;
+  --bulma-light-s: 5%;
+  --bulma-light-l: 12%;
+}
+
+/* ---------- Typography ---------- */
+
+:root {
+  --bulma-family-primary: var(--sp-font-body);
+  --bulma-family-secondary: var(--sp-font-display);
+  --bulma-family-code: var(--sp-font-mono);
+
+  --bulma-body-size: 1.0625rem;
+  --bulma-body-line-height: 1.7;
+  --bulma-body-weight: 400;
+
+  --bulma-strong-weight: 600;
+  --bulma-title-weight: 800;
+  --bulma-title-line-height: 1.1;
+  --bulma-subtitle-weight: 400;
+  --bulma-subtitle-line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+}
+
+.title {
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  letter-spacing: -0.01em;
+  color: var(--sp-text-muted);
+}
+
+/* ---------- Spacing ---------- */
+
+:root {
+  --bulma-block-spacing: 1.75rem;
+  --bulma-section-padding: 5rem 1.5rem;
+  --bulma-section-padding-desktop: 7rem 3rem;
+  --bulma-content-heading-line-height: 1.15;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+/* ---------- Base ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--sp-bg);
+  color: var(--sp-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--sp-primary-soft);
+  color: var(--sp-white);
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  background-color: transparent;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid hsl(240, 2%, 15%);
+  min-height: 4rem;
+}
+
+.navbar.is-dark {
+  background-color: hsl(240 6% 8% / 0.85);
+}
+
+.navbar-brand .navbar-item {
+  font-family: var(--sp-font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--sp-white);
+}
+
+.navbar-brand .navbar-item:hover {
+  color: var(--sp-primary);
+  background-color: transparent;
+}
+
+.navbar-item {
+  color: var(--sp-text-muted);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.navbar-item:hover {
+  color: var(--sp-white);
+  background-color: transparent;
+}
+
+.navbar-item.is-active {
+  color: var(--sp-primary);
+}
+
+.navbar-burger {
+  color: var(--sp-text-muted);
+}
+
+.navbar-burger:hover {
+  color: var(--sp-white);
+  background-color: hsl(240, 4%, 14%);
+}
+
+/* ---------- Section ---------- */
+
+.section {
+  padding: 6rem 1.5rem;
+}
+
+@media (min-width: 769px) {
+  .section {
+    padding: 8rem 3rem;
+  }
+}
+
+/* ---------- Hero / Gradient section ---------- */
+
+.section-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, hsl(4 90% 58% / 0.08), transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% 100%, hsl(262 80% 60% / 0.06), transparent 70%);
+  pointer-events: none;
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  font-size: 0.9375rem;
+  height: 2.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.button.is-primary {
+  background-color: var(--sp-primary);
+  border-color: transparent;
+  color: var(--sp-white);
+}
+
+.button.is-primary:hover {
+  background-color: var(--sp-primary-hover);
+  box-shadow: 0 0 0 4px var(--sp-primary-soft);
+}
+
+.button.is-large {
+  font-size: 1.0625rem;
+  height: 3.25rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 0.625rem;
+}
+
+.button.is-outlined {
+  background-color: transparent;
+  border: 1.5px solid var(--sp-border-light);
+  color: var(--sp-text);
+}
+
+.button.is-outlined:hover {
+  border-color: var(--sp-primary);
+  color: var(--sp-primary);
+  background-color: var(--sp-primary-soft);
+}
+
+/* ---------- Box / Cards ---------- */
+
+.box {
+  background-color: var(--sp-bg-card);
+  border: 1px solid var(--sp-border);
+  border-radius: 0.75rem;
+  box-shadow: none;
+  color: var(--sp-text);
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  padding: 2rem;
+}
+
+.box:hover {
+  border-color: var(--sp-border-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px hsl(0 0% 0% / 0.3);
+}
+
+.box .title {
+  color: var(--sp-white);
+  font-size: 1.25rem;
+}
+
+.box p {
+  color: var(--sp-text-muted);
+  line-height: 1.6;
+}
+
+/* ---------- Form inputs ---------- */
+
+.input,
+.textarea {
+  background-color: var(--sp-surface);
+  border: 1px solid var(--sp-border);
+  border-radius: 0.5rem;
+  color: var(--sp-text);
+  font-size: 0.9375rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--sp-text-dim);
+}
+
+.input:hover,
+.textarea:hover {
+  border-color: var(--sp-border-light);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--sp-primary);
+  box-shadow: 0 0 0 3px var(--sp-primary-soft);
+}
+
+.label {
+  color: var(--sp-text-muted);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.select select {
+  background-color: var(--sp-surface);
+  border: 1px solid var(--sp-border);
+  border-radius: 0.5rem;
+  color: var(--sp-text);
+  font-size: 0.9375rem;
+}
+
+.select select:hover {
+  border-color: var(--sp-border-light);
+}
+
+.select select:focus {
+  border-color: var(--sp-primary);
+  box-shadow: 0 0 0 3px var(--sp-primary-soft);
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+  border-color: var(--sp-primary);
+}
+
+/* ---------- Content typography ---------- */
+
+.content h1,
+.content h2,
+.content h3 {
+  color: var(--sp-white);
+}
+
+.content p,
+.content li {
+  color: var(--sp-text-muted);
+}
+
+.content strong {
+  color: var(--sp-text);
+}
+
+.content a {
+  color: var(--sp-primary);
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  background-color: hsl(240, 7%, 5%);
+  border-top: 1px solid hsl(240, 2%, 12%);
+  color: var(--sp-text-dim);
+  padding: 4rem 1.5rem;
+}
+
+.footer a {
+  color: var(--sp-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--sp-primary);
+  text-decoration: none;
+}
+
+.footer .content p,
+.footer .content {
+  color: var(--sp-text-dim);
+}
+
+/* ---------- Tags / Badges ---------- */
+
+.tag {
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ---------- Divider / Separator ---------- */
+
+hr {
+  background-color: var(--sp-border);
+  border: none;
+  height: 1px;
+}
+
+/* ---------- Utility ---------- */
+
+.has-bg-elevated {
+  background-color: var(--sp-bg-elevated);
+}
+
+.has-bg-card {
+  background-color: var(--sp-bg-card);
+}
+
+.has-text-muted {
+  color: var(--sp-text-muted);
+}
+
+.has-text-accent {
+  color: var(--sp-accent);
+}
+
+.rounded-lg {
+  border-radius: 0.75rem;
+}
+
+.gap-sm { gap: 0.75rem; }
+.gap-md { gap: 1.5rem; }
+.gap-lg { gap: 3rem; }
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sp-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sp-border-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sp-text-dim);
+}
+
+/* ---------- Selection highlight ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
