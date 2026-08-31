@@ -2,6 +2,8 @@
 import { ClientRouter } from "astro:transitions";
 import "bulma/css/bulma.min.css";
 import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 export interface Props {
     title: string;
@@ -14,10 +16,6 @@ const { title, description, currentPage } = Astro.props;
 const metaDescription =
     description ??
     "Studio Pulse — Full-service communication agency. Brand strategy, creative direction, digital, and content.";
-
-function isCurrent(page: string) {
-    return currentPage === page ? { "aria-current": "page" as const } : {};
-}
 ---
 
 <!doctype html>
@@ -56,121 +54,12 @@ function isCurrent(page: string) {
     <body>
         <a class="skip-link" href="#main-content">Skip to main content</a>
 
-        <nav class="navbar is-dark" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/"> Studio Pulse </a>
-                <button
-                    type="button"
-                    class="navbar-burger"
-                    aria-label="menu"
-                    aria-expanded="false"
-                    data-target="mainNavbar"
-                >
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </button>
-            </div>
-            <div id="mainNavbar" class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item" href="/" {...isCurrent("home")}
-                        >Home</a
-                    >
-                    <a class="navbar-item" href="/about" {...isCurrent("about")}
-                        >About</a
-                    >
-                    <a class="navbar-item" href="/blog" {...isCurrent("blog")}
-                        >Blog</a
-                    >
-                    <a
-                        class="navbar-item"
-                        href="/contact"
-                        {...isCurrent("contact")}>Contact</a
-                    >
-                    <div class="navbar-item">
-                        <button
-                            class="theme-toggle"
-                            type="button"
-                            aria-label="Toggle dark mode"
-                        >
-                            <span class="icon-sun" aria-hidden="true">☀️</span>
-                            <span class="icon-moon" aria-hidden="true">🌙</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <Navbar currentPage={currentPage} />
 
         <main id="main-content">
             <slot />
         </main>
 
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <p class="mb-2">
-                    <strong class="has-text-white">Studio Pulse</strong>
-                </p>
-                <p>
-                    &copy; {new Date().getFullYear()} Studio Pulse. All rights reserved.
-                </p>
-            </div>
-        </footer>
-
-        <script>
-            function initNav() {
-                const stored = localStorage.getItem("theme");
-                const prefersDark = window.matchMedia(
-                    "(prefers-color-scheme: dark)",
-                ).matches;
-                if (stored === "dark" || (!stored && prefersDark)) {
-                    document.documentElement.setAttribute("data-theme", "dark");
-                } else {
-                    document.documentElement.removeAttribute("data-theme");
-                }
-
-                document.querySelectorAll(".navbar-burger").forEach((el) => {
-                    el.addEventListener("click", () => {
-                        const target = el.getAttribute("data-target");
-                        const menu = target
-                            ? document.getElementById(target)
-                            : null;
-                        if (!menu) return;
-                        const expanded = el.classList.toggle("is-active");
-                        el.setAttribute("aria-expanded", String(expanded));
-                        menu.classList.toggle("is-active");
-                    });
-                });
-
-                function applyTheme(isDark: boolean) {
-                    if (isDark) {
-                        document.documentElement.setAttribute(
-                            "data-theme",
-                            "dark",
-                        );
-                        localStorage.setItem("theme", "dark");
-                    } else {
-                        document.documentElement.removeAttribute("data-theme");
-                        localStorage.setItem("theme", "light");
-                    }
-                }
-
-                const toggleBtn = document.querySelector(".theme-toggle");
-                if (toggleBtn) {
-                    toggleBtn.addEventListener("click", () => {
-                        const isDark =
-                            document.documentElement.hasAttribute("data-theme");
-                        const next = !isDark;
-                        if (!document.startViewTransition) {
-                            applyTheme(next);
-                            return;
-                        }
-                        document.startViewTransition(() => applyTheme(next));
-                    });
-                }
-            }
-
-            initNav();
-            document.addEventListener("astro:page-load", initNav);
-        </script>
+        <Footer />
     </body>
 </html>
