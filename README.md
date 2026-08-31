@@ -97,10 +97,4 @@ All colors, surfaces, and borders are CSS custom properties defined in `src/styl
 
 The active theme is set on the `<html>` element by the inline script in `Layout.astro` (reads `localStorage`, falls back to `prefers-color-scheme`). During client-side navigation the theme is re-applied via the `astro:page-load` handler.
 
-## Support me
 
-If you like my content or want to support my work on GitHub, you can support me with a very small donation. 
-<br/>
-I would be grateful 🥹
-
-<a href="https://www.buymeacoffee.com/domenicotenace" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>

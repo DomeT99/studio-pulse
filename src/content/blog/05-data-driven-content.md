@@ -2,7 +2,7 @@
 title: "Data-Driven Content Strategy: Stop Guessing, Start Measuring"
 date: 2025-09-22
 description: "Your gut is a good editor, but a terrible strategist. Here's how we use data to decide what to publish, when to publish it, and who to publish it for."
-author: "Marcus Rivera"
+author: "Author Name"
 tags: [content, strategy, data]
 ---
 

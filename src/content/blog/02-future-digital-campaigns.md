@@ -2,7 +2,7 @@
 title: "The Future of Digital Campaigns: What 2026 Looks Like"
 date: 2025-08-03
 description: "From AI-generated creative to zero-click content, the rules of digital advertising are being rewritten. Here's what your brand needs to know."
-author: "Marcus Rivera"
+author: "Author Name"
 tags: [digital, trends, campaigns]
 ---
 

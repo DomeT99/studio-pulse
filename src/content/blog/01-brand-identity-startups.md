@@ -2,7 +2,7 @@
 title: "Brand Identity for Startups: Why It Matters from Day One"
 date: 2025-07-15
 description: "Most founders treat branding as a finishing touch. The truth is, your visual identity shapes perception long before your product ships."
-author: "Clara Bennett"
+author: "Author Name"
 tags: [branding, startups, strategy]
 ---
 

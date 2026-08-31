@@ -2,7 +2,7 @@
 title: "Motion Design: The Silent Superpower of Modern Brands"
 date: 2025-09-05
 description: "Static brands feel frozen in time. Here's why motion design is no longer optional — and how to do it without a six-figure budget."
-author: "Clara Bennett"
+author: "Author Name"
 tags: [motion, design, trends]
 ---
 

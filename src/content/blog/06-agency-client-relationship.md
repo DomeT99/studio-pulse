@@ -2,7 +2,7 @@
 title: "The Agency-Client Relationship: A Framework for Better Collaboration"
 date: 2025-10-10
 description: "The best work comes from the best partnerships. Here's the operating system we use to keep client relationships healthy, productive, and honest."
-author: "Lena Kowalski"
+author: "Author Name"
 tags: [agency, process, collaboration]
 ---
 

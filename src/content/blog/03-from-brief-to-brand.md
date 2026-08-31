@@ -2,7 +2,7 @@
 title: "From Brief to Brand: Inside Our Creative Process"
 date: 2025-08-18
 description: "A transparent walkthrough of how Studio Pulse transforms a creative brief into a living brand — from research through delivery."
-author: "Lena Kowalski"
+author: "Author Name"
 tags: [process, creative, case-study]
 ---
 
