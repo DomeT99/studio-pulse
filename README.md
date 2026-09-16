@@ -28,7 +28,9 @@ Built with [Astro](https://astro.build) and [Bulma](https://bulma.io), staticall
 ├── public/                 # favicon + static assets
 ├── src/
 │   ├── components/
-│   │   └── Card.astro      # shared card component
+│   │   ├── Card.astro      # shared card component
+│   │   ├── Navbar.astro    # navbar with burger menu + theme toggle
+│   │   └── Footer.astro    # site footer
 │   ├── content/
 │   │   └── blog/           # Markdown blog posts (content collection)
 │   ├── content.config.ts   # content collection schema + loader
@@ -65,7 +67,6 @@ Open `http://localhost:4321`.
 | `pnpm dev`        | Start local dev server at `localhost:4321`    |
 | `pnpm build`      | Build production site to `./dist/`            |
 | `pnpm preview`    | Preview the production build locally          |
-| `pnpm astro check`| Run Astro type checking                       |
 
 ## Adding a Blog Post
 
@@ -86,7 +87,7 @@ Open `http://localhost:4321`.
 
 3. The post is automatically available at `/blog/my-post/`.
 
-> `date` field supports ISO date strings. `tags` is optional.
+> The `date` field accepts ISO date strings. `tags` and `image` are optional.
 
 ## Theming
 
