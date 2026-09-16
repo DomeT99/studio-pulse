@@ -51,7 +51,11 @@ Keep changes consistent with the existing codebase:
 pnpm build        # production build; must complete without errors
 ```
 
-There is currently no automated test suite or linter configured, so verify the affected pages manually in the browser at both desktop and mobile widths and in light and dark modes.
+There is still no automated test suite or linter configured, so verify the affected pages manually in the browser at both desktop and mobile widths and in light and dark modes. On every push and pull request, CI runs `pnpm install`, `pnpm audit`, and `pnpm build` (see `.github/workflows/ci.yml`).
+
+## Reporting Security Issues
+
+Report vulnerabilities privately — see `SECURITY.md`. Do not open a public issue for a suspected security problem.
 
 ## Git Workflow
 
